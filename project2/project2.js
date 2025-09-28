@@ -1,8 +1,8 @@
 var myName ="Maryam Curnal";
 var para1 =document.getElementById("p1");
 para1.textContent = myName;
-var n1 = 47;
-var n2 = 47;
+let n1 = 47;
+let n2 = 47;
 var numberSum;
 numberSum = n1 + n2;
 document.getElementById("p2").textContent = numberSum;
@@ -19,6 +19,6 @@ var ageCompare;
 ageCompare = n1 < 28;
 document.getElementById("p6").textContent = ageCompare;
 
-var n1 = 32;
-var n2 = 33;
+let n1 = 32;
+let n2 = 33;
 
