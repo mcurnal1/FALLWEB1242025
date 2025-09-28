@@ -19,6 +19,6 @@ var ageCompare;
 ageCompare = n1 < 28;
 document.getElementById("p6").textContent = ageCompare;
 
-n1 = 32;
-n2 = 33;
+var n1 = 32;
+var n2 = 33;
 
