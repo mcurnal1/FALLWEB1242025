@@ -6,3 +6,16 @@ var n2 = 47;
 var numberSum;
 numberSum = n1 + n2;
 document.getElementById("p2").textContent = numberSum;
+var numberMult;
+numberMult = n1 * n2;
+document.getElementById("p3").textContent = numberMult;
+var myNameAddNum;
+myNameAddNum = n1 + myName;
+document.getElementById("p4").textContent = myNameAddNum;
+var myNameMultNum;
+myNameMultNum = n1 * myName;
+document.getElementById("p5").textContent = myNameMultNum;
+var ageCompare;
+ageCompare = n1 < 28;
+document.getElementById("p6").textContent = ageCompare;
+
