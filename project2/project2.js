@@ -1,5 +1,5 @@
-var myName ="Maryam Curnal";
-var para1 =document.getElementById("p1");
+var myName = "Maryam Curnal";
+var para1 = document.getElementById("p1");
 para1.textContent = myName;
 let n1 = 47;
 let n2 = 47;
@@ -21,4 +21,3 @@ document.getElementById("p6").textContent = ageCompare;
 
 n1 = 32;
 n2 = 33;
-
