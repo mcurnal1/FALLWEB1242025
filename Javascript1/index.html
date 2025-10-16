@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Maryam Curnal 10/15/2025 -->
+<!-- adapted from https;//javscript30.com -->
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="/Users/maryam/Documents/drumkit/style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">yell</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">run</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">cry</span>
+   
+  </div>
+
+  <audio data-key="65" src="Scary Sound Effects (Horror Scream).mp4"></audio>
+  <audio data-key="83" src="Foot Step Hallway _ Horror Film Sound Effects.mp4"></audio>
+  <audio data-key="68" src="Girl Crying Sound Effect.mp4"></audio>
+ 
+<script>
+
+
+
+
+function playSound(e) {
+const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+if (!audio) return;
+audio.currentTime = 0;//stops function from running 
+audio.play();
+key.classList.add('playing');
+
+
+
+}
+
+function removeTransition(e){
+if (e.propertyName !== 'transform') return;
+
+this.classList.remove('playing');
+
+  }
+
+
+const keys = document.querySelectorAll('.key');
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+
+window.addEventListener('keydown', playSound);
+
+
+
+  
+
+</script>
+
+
+</body>
+</html>
