@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Calculator</title>
+
+  <style>
+    /* ====== Base Styles ====== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f7f8fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+
+    label, input, button {
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      width: 150px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    p {
+      margin-top: 1rem;
+      background-color: white;
+      padding: 0.75rem;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      white-space: pre-line; /* preserves newlines from JS */
+    }
+
+    /* ====== Responsive Design ====== */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      input {
+        width: 120px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>JavaScript Calculator</h1>
+
+  <label for="num">Enter a number:</label>
+  <input type="number" id="num" placeholder="Enter a number">
+
+  <button id="calcBtn">Calculate!</button>
+
+  <p id="addition">Addition</p>
+  <p id="subtraction">Subtraction</p>
+  <p id="multiplication">Multiplication</p>
+  <p id="division">Division</p>
+
+  <script>
+    // ====== Addition using for loop ======
+    function additionFunc(num) {
+      let result = '';
+      for (let i = 1; i <= 10; i++) {
+        result += `${i} + ${num} = ${i + num}\n`;
+      }
+      document.getElementById('addition').innerText = result;
+    }
+
+    // ====== Subtraction using while loop ======
+    function subtractionFunc(num) {
+      let result = '';
+      let i = 1;
+      while (i <= 10) {
+        result += `${i} - ${num} = ${i - num}\n`;
+        i++;
+      }
+      document.getElementById('subtraction').innerText = result;
+    }
+
+    // ====== Multiplication using do...while loop ======
+    function multiplicationFunc(num) {
+      let result = '';
+      let i = 1;
+      do {
+        result += `${i} × ${num} = ${i * num}\n`;
+        i++;
+      } while (i <= 10);
+      document.getElementById('multiplication').innerText = result;
+    }
+
+    // ====== Division using for loop + .toFixed(2) ======
+    function divisionFunc(num) {
+      let result = '';
+      for (let i = 1; i <= 10; i++) {
+        result += `${i} ÷ ${num} = ${(i / num).toFixed(2)}\n`;
+      }
+      document.getElementById('division').innerText = result;
+    }
+
+    // ====== Master Function ======
+    function calculateAll() {
+      const num = Number(document.getElementById('num').value);
+      if (isNaN(num) || num === 0) {
+        alert('Please enter a valid non-zero number.');
+        return;
+      }
+      additionFunc(num);
+      subtractionFunc(num);
+      multiplicationFunc(num);
+      divisionFunc(num);
+    }
+
+    // ====== Dynamic Event Listener ======
+    document.getElementById('calcBtn').addEventListener('click', calculateAll);
+  </script>
+</body>
+</html>
